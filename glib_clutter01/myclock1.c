@@ -5,19 +5,9 @@
 #include <glib-object.h>
 
 #define MY_TYPE_CLOCK (my_clock_get_type ())
-#define MY_CLOCK(obj) 
-  (G_TYPE_CHECK_INSTANCE_CAST ((obj), MY_TYPE_CLOCK, MyClock))
-#define MY_CLOCK_CLASS(klass) 
-  (G_TYPE_CHECK_CLASS_CAST ((klass), MY_TYPE_CLOCK, MyClockClass))
-#define MY_IS_CLOCK(obj) 
-  (G_TYPE_CHECK_INSTANCE_TYPE ((obj), MY_TYPE_CLOCK))
-#define MY_IS_CLOCK_CLASS(klass) 
-  (G_TYPE_CHECK_CLASS_TYPE ((klass), MY_TYPE_CLOCK))
-#define MY_CLOCK_GET_CLASS(obj) 
-  (G_TYPE_INSTANCE_GET_CLASS ((obj), MY_TYPE_CLOCK, MyClockClass))
 
-typedef struct _MyClock        MyClock;
-typedef struct _MyClockClass   MyClockClass;
+G_DECLARE_FINAL_TYPE(MyClock, my_clock, MY, CLOCK, GObject)
+
 typedef struct _MyClockPrivate MyClockPrivate;
 
 struct _MyClock
